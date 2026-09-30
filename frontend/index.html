@@ -80,11 +80,37 @@ h1 em{font-style:normal;color:var(--matcha-deep);text-decoration:underline;text-
 }
 .micro{font-size:13px;color:var(--latte);margin-top:10px}
 
-/* chalk strip */
-.strip{margin:44px auto 0;background:var(--matcha-deep);border-radius:var(--r);color:#fff;display:flex;flex-wrap:wrap;box-shadow:var(--shadow)}
-.strip div{flex:1;min-width:140px;text-align:center;padding:16px 10px}
-.strip b{display:block;font-family:'Baloo 2';font-size:24px;color:var(--sakura)}
-.strip span{font-size:12.5px;opacity:.85}
+/* The reward leads, while dividers keep each metric easy to scan. */
+.strip{width:100%;margin:44px auto 0;padding:10px;background:var(--matcha-deep);border:1px solid rgba(255,255,255,.18);border-radius:24px;color:var(--cream);display:grid;grid-template-columns:repeat(4,minmax(0,1fr));box-shadow:0 10px 24px rgba(62,122,82,.12);text-align:left}
+.stat{min-width:0;padding:22px 24px;position:relative}
+.stat+.stat::before{content:"";position:absolute;left:0;top:24px;bottom:24px;width:1px;background:rgba(255,247,238,.22)}
+.stat dt{display:flex;align-items:center;gap:8px;font-size:12px;font-weight:800;line-height:1.4;color:var(--cream)}
+.stat dt .ui-icon{width:17px;height:17px;color:var(--sakura);vertical-align:0}
+.stat dd{margin:12px 0 0}
+.stat-value{display:flex;align-items:baseline;gap:6px;white-space:nowrap;line-height:1.1}
+.stat-value b{font-family:'Baloo 2';font-size:42px;font-weight:800;font-variant-numeric:tabular-nums;letter-spacing:-.025em}
+.stat-value .unit{font-size:14px;font-weight:800}
+.stat--reward .stat-value{color:var(--sakura)}
+.stat--supply .stat-value b{font-size:34px}
+.stat-note{display:block;margin-top:10px;font-size:12px;line-height:1.65;color:var(--cream);text-wrap:pretty}
+@media(max-width:1000px){
+  .strip{max-width:720px;grid-template-columns:repeat(2,minmax(0,1fr));padding:8px}
+  .stat{padding:22px}
+  .stat:nth-child(3)::before{display:none}
+  .stat:nth-child(n+3){border-top:1px solid rgba(255,247,238,.22)}
+}
+@media(max-width:520px){
+  .strip{margin-top:32px;border-radius:20px;padding:6px}
+  .stat{padding:18px 12px}
+  .stat dt{font-size:11px;gap:6px;flex-wrap:wrap}
+  .stat dt .ui-icon{width:15px;height:15px}
+  .stat dd{margin-top:10px}
+  .stat-value{gap:4px}
+  .stat-value b{font-size:34px}
+  .stat-value .unit{font-size:12px}
+  .stat--supply .stat-value b{font-size:clamp(22px,6.3vw,30px);letter-spacing:-.035em}
+  .stat-note{font-size:11px;line-height:1.6;margin-top:8px}
+}
 
 /* sections */
 section{padding:64px 0 8px}
@@ -140,9 +166,9 @@ footer{padding:34px 0 40px;font-size:13px;color:var(--latte)}
 footer .in{display:flex;gap:14px;flex-wrap:wrap;justify-content:space-between;align-items:center}
 footer a{color:var(--matcha-deep)}
 
-.ui-icon{display:inline-block;width:1.05em;height:1.05em;vertical-align:-.16em;stroke:currentColor;fill:none;flex:none}.ui-icon.big{width:1.25em;height:1.25em}.spark .ui-icon{width:1em;height:1em}.task .ui-icon,.chal .ui-icon{width:2em;height:2em}.card h3 .ui-icon{width:1.15em;height:1.15em}.navbar .ui-icon{width:24px;height:24px;display:block;vertical-align:0}.tr .ui-icon{width:30px;height:30px}.mi .ui-icon{width:26px;height:26px}.rank-pill .ui-icon{width:1em;height:1em}.ticker .ui-icon{width:1em;height:1em}.brand .ui-icon{width:1em;height:1em}.end .ui-icon{width:78px;height:78px}.</style>
+.ui-icon{display:inline-block;width:1.05em;height:1.05em;vertical-align:-.16em;stroke:currentColor;fill:none;flex:none}.ui-icon.big{width:1.25em;height:1.25em}.spark .ui-icon{width:1em;height:1em}.task .ui-icon,.chal .ui-icon{width:2em;height:2em}.card h3 .ui-icon{width:1.15em;height:1.15em}.navbar .ui-icon{width:24px;height:24px;display:block;vertical-align:0}.tr .ui-icon{width:30px;height:30px}.mi .ui-icon{width:26px;height:26px}.rank-pill .ui-icon{width:1em;height:1em}.ticker .ui-icon{width:1em;height:1em}.brand .ui-icon{width:1em;height:1em}.end .ui-icon{width:78px;height:78px}</style>
 <style>
-.ui-icon{width:1.15em;height:1.15em;vertical-align:-.18em}
+.ui-icon{width:20px;height:20px;vertical-align:-.2em}
 .step .ic .ui-icon{width:32px;height:32px}
 .mi .ui-icon{width:27px;height:27px}
 .tr .ui-icon{width:30px;height:30px}
@@ -157,14 +183,10 @@ footer a{color:var(--matcha-deep)}
 details p,.lead,.sub,.end p{overflow-wrap:anywhere}
 .nav-toggle{display:none;margin-left:auto;width:44px;height:44px;border:1.5px solid var(--milkline);border-radius:14px;background:var(--paper);color:var(--cocoa);cursor:pointer;align-items:center;justify-content:center;padding:0;flex:none}
 .nav-toggle:focus-visible{outline:3px solid var(--sakura);outline-offset:2px}
-.nav-toggle-box{position:relative;display:block;width:18px;height:14px}
-.nav-toggle-box span{position:absolute;left:0;right:0;height:2px;border-radius:2px;background:currentColor;transition:transform .22s ease,opacity .18s ease,top .22s ease}
-.nav-toggle-box span:nth-child(1){top:0}
-.nav-toggle-box span:nth-child(2){top:6px}
-.nav-toggle-box span:nth-child(3){top:12px}
-nav.open .nav-toggle-box span:nth-child(1){top:6px;transform:rotate(45deg)}
-nav.open .nav-toggle-box span:nth-child(2){opacity:0}
-nav.open .nav-toggle-box span:nth-child(3){top:6px;transform:rotate(-45deg)}
+.nav-toggle .ui-icon{width:22px;height:22px;vertical-align:0}
+.nav-toggle .menu-close{display:none}
+nav.open .nav-toggle .menu-open{display:none}
+nav.open .nav-toggle .menu-close{display:block}
 @media(max-width:767px){
   .nav-toggle{display:inline-flex}
   .nbar{flex-wrap:nowrap;justify-content:flex-start}
@@ -174,13 +196,11 @@ nav.open .nav-toggle-box span:nth-child(3){top:6px;transform:rotate(-45deg)}
   nav.open .nlinks{max-height:280px;opacity:1;margin-top:8px;padding:8px;border-width:1.5px;pointer-events:auto;box-shadow:0 12px 28px rgba(74,52,42,.1)}
 }
 @media(prefers-reduced-motion:reduce){
-  .nlinks,.nav-toggle-box span{transition:none}
+  .nlinks{transition:none}
 }
 @media(max-width:520px){
   .wrap{padding-left:18px;padding-right:18px}
   section{padding-top:52px}
-  .strip{display:grid;grid-template-columns:repeat(2,minmax(0,1fr))}
-  .strip div{min-width:0;padding:14px 6px}
   .trust{grid-template-columns:1fr}
   .mi{gap:10px;padding:13px 16px}
   .mi .em{width:30px}
@@ -192,10 +212,6 @@ nav.open .nav-toggle-box span:nth-child(3){top:6px;transform:rotate(-45deg)}
 }
 img{max-width:100%;height:auto}
 .hero-art{position:relative}
-@media(max-width:1000px){
-  .strip{display:grid;grid-template-columns:repeat(2,minmax(0,1fr))}
-  .strip div{min-width:0;padding:16px 12px}
-}
 @media(min-width:700px) and (max-width:980px){
   .steps{grid-template-columns:1fr 1fr}
 }
@@ -204,12 +220,12 @@ img{max-width:100%;height:auto}
 }
 </style>
 </head>
-<svg aria-hidden=true style="position:absolute;width:0;height:0;overflow:hidden"><defs><symbol id="icon-cup" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M5 8h14l-1 10H6L5 8Z"/><path d="M8 8c0-4 2-5 4-5s4 1 4 5M9 13h.01M15 13h.01M10 16c1 .8 3 .8 4 0" fill="none"/></symbol><symbol id="icon-recycle" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="m12 3 3 5h-3a7 7 0 0 0-6 3M5 11l-2 3 5 1M19 13l-3-5 3-1M16 8a7 7 0 0 1-1 9M15 17h-6l1 3M9 17a7 7 0 0 1-3-6" fill="none"/></symbol><symbol id="icon-spark" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v18M3 12h18M5.6 5.6l12.8 12.8M18.4 5.6 5.6 18.4"/></symbol><symbol id="icon-spark2" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v18M3 12h18"/></symbol><symbol id="icon-globe" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c3 3 3 15 0 18M12 3c-3 3-3 15 0 18" fill="none"/></symbol><symbol id="icon-sprout" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21V9M12 12C8 12 5 9 5 5c4 0 7 3 7 7ZM12 10c0-4 3-7 7-7 0 4-3 7-7 7Z" fill="none"/></symbol><symbol id="icon-leaf" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M20 4C10 4 4 8 4 15c0 2 1 4 3 4 7 0 11-6 13-15Z" fill="none"/><path d="M4 20 14 10" fill="none"/></symbol><symbol id="icon-beach" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19c3-2 5-2 8 0s5 2 8 0M4 15c3-2 5-2 8 0s5 2 8 0M12 4v9M8 7l4-3 4 3" fill="none"/></symbol><symbol id="icon-eye" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12s3-6 9-6 9 6 9 6-3 6-9 6-9-6-9-6Z" fill="none"/><circle cx="12" cy="12" r="2"/></symbol><symbol id="icon-camera" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 8h4l1.5-2h5L16 8h4v10H4V8Z" fill="none"/><circle cx="12" cy="13" r="3" fill="none"/></symbol><symbol id="icon-lock" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="10" width="14" height="10" rx="2" fill="none"/><path d="M8 10V7a4 4 0 0 1 8 0v3" fill="none"/></symbol><symbol id="icon-flame" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21c4 0 7-3 7-7 0-4-3-7-5-10-1 3-2 4-3 5-1-2-2-3-2-5-2 2-5 6-5 10 0 4 3 7 8 7Z" fill="none"/></symbol><symbol id="icon-image" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="5" width="16" height="14" rx="2" fill="none"/><circle cx="9" cy="10" r="1"/><path d="m5 17 4-4 3 3 2-2 5 4" fill="none"/></symbol><symbol id="icon-handshake" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="m4 11 4-4 4 2 4-2 4 4-5 5-3-2-3 2-5-5Z" fill="none"/><path d="m9 13 3 2 3-3" fill="none"/></symbol><symbol id="icon-receipt" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M6 3h12v18l-3-2-3 2-3-2-3 2V3Z" fill="none"/><path d="M9 8h6M9 12h6" fill="none"/></symbol><symbol id="icon-settings" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3" fill="none"/><path d="M19 12a7 7 0 0 0-.1-1l2-1-2-3-2 1a8 8 0 0 0-2-1l-.3-2h-3l-.3 2a8 8 0 0 0-2 1l-2-1-2 3 2 1a7 7 0 0 0 0 2l-2 1 2 3 2-1a8 8 0 0 0 2 1l.3 2h3l.3-2a8 8 0 0 0 2-1l2 1 2-3-2-1c.1-.3.1-.7.1-1Z" fill="none"/></symbol><symbol id="icon-bolt" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="m13 2-8 11h6l-1 9 8-11h-6l1-9Z" fill="none"/></symbol><symbol id="icon-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="m5 12 4 4L19 6" fill="none"/></symbol><symbol id="icon-hand" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M7 11V6a1 1 0 0 1 2 0v4V5a1 1 0 0 1 2 0v5V4a1 1 0 0 1 2 0v6V6a1 1 0 0 1 2 0v8l2-2a1.5 1.5 0 0 1 2 2l-4 5H9c-2 0-3-2-3-4v-4a1 1 0 0 1 1-1Z" fill="none"/></symbol><symbol id="icon-pen" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="m4 20 4-1 10-10-3-3L5 16l-1 4Z" fill="none"/><path d="m13 7 3 3" fill="none"/></symbol><symbol id="icon-x" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="m6 6 12 12M18 6 6 18" fill="none"/></symbol><symbol id="icon-tree" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21V12M8 21h8M12 3 7 11h3l-3 4h10l-3-4h3l-5-8Z" fill="none"/></symbol><symbol id="icon-gift" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="9" width="16" height="11" rx="1" fill="none"/><path d="M12 9v11M4 13h16M12 9H8a2 2 0 1 1 2-2c2 0 2 2 2 2Zm0 0h4a2 2 0 1 0-2-2c-2 0-2 2-2 2Z" fill="none"/></symbol><symbol id="icon-ticket" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 7a2 2 0 0 0 0 4v2a2 2 0 0 0 0 4h16a2 2 0 0 0 0-4v-2a2 2 0 0 0 0-4H4Z" fill="none"/><path d="M12 7v10" fill="none"/></symbol><symbol id="icon-medal" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="14" r="6" fill="none"/><path d="m8 9-1-6 5 3 5-3-1 6" fill="none"/></symbol><symbol id="icon-trophy" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M8 4h8v5a4 4 0 0 1-8 0V4ZM12 13v5M8 21h8M5 5H3v2a4 4 0 0 0 4 4M19 5h2v2a4 4 0 0 1-4 4" fill="none"/></symbol><symbol id="icon-community" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="8" r="3" fill="none"/><circle cx="17" cy="9" r="2" fill="none"/><path d="M3 19c0-3 2-5 6-5s6 2 6 5M15 14c3 0 5 2 5 5" fill="none"/></symbol><symbol id="icon-home" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="m3 11 9-8 9 8v9H3v-9Z" fill="none"/><path d="M9 20v-6h6v6" fill="none"/></symbol><symbol id="icon-user" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="4" fill="none"/><path d="M4 21c0-4 3-7 8-7s8 3 8 7" fill="none"/></symbol><symbol id="icon-calendar" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="5" width="16" height="15" rx="2" fill="none"/><path d="M8 3v4M16 3v4M4 10h16" fill="none"/></symbol><symbol id="icon-book" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M5 4h11a3 3 0 0 1 3 3v13H8a3 3 0 0 0-3 1V4Z" fill="none"/><path d="M8 20V7" fill="none"/></symbol><symbol id="icon-upload" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 16V4M8 8l4-4 4 4M5 13v6h14v-6" fill="none"/></symbol><symbol id="icon-plug" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M9 3v6M15 3v6M7 8h10v2a5 5 0 0 1-10 0V8ZM12 15v6" fill="none"/></symbol><symbol id="icon-search" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="10" cy="10" r="6" fill="none"/><path d="m15 15 5 5" fill="none"/></symbol><symbol id="icon-link" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="m10 13 4-4M7 17H5a4 4 0 0 1 0-8h4M17 7h2a4 4 0 0 1 0 8h-4" fill="none"/></symbol><symbol id="icon-bag" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M5 8h14l-1 12H6L5 8ZM9 8a3 3 0 0 1 6 0" fill="none"/></symbol><symbol id="icon-worm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 15c3 5 7 5 8 1s-3-7 1-9c4-2 6 1 7 4" fill="none"/></symbol></defs></svg><body>
+<body>
 
 <nav id="siteNav"><div class="wrap nbar">
   <a class="brand" href="#">Syl<span class="o">o</span>ra</a>
   <button class="nav-toggle" id="navToggle" type="button" aria-expanded="false" aria-controls="siteLinks" aria-label="Open menu">
-    <span class="nav-toggle-box" aria-hidden="true"><span></span><span></span><span></span></span>
+    <svg class="ui-icon menu-open" aria-hidden="true"><use href="assets/icons/lucide.svg#icon-menu"></use></svg><svg class="ui-icon menu-close" aria-hidden="true"><use href="assets/icons/lucide.svg#icon-x"></use></svg>
   </button>
   <div class="nlinks" id="siteLinks">
     <a href="#how">How it works</a>
@@ -223,10 +239,10 @@ img{max-width:100%;height:auto}
 <header class="hero"><div class="wrap">
   <div class="hero-layout">
   <div class="hero-art">
-  <span class="spark" style="top:18%;left:12%"><svg class=ui-icon aria-hidden=true><use href=#icon-spark></use></svg></span>
-  <span class="spark" style="top:26%;right:14%;animation-delay:.7s"><svg class=ui-icon aria-hidden=true><use href=#icon-spark2></use></svg></span>
-  <span class="spark" style="top:58%;left:20%;animation-delay:1.3s"><svg class=ui-icon aria-hidden=true><use href=#icon-spark></use></svg></span>
-  <span class="spark" style="top:52%;right:10%;animation-delay:1.9s"><svg class=ui-icon aria-hidden=true><use href=#icon-spark2></use></svg></span>
+  <span class="spark" style="top:18%;left:12%"><svg class=ui-icon aria-hidden=true><use href="assets/icons/lucide.svg#icon-spark"></use></svg></span>
+  <span class="spark" style="top:26%;right:14%;animation-delay:.7s"><svg class=ui-icon aria-hidden=true><use href="assets/icons/lucide.svg#icon-spark2"></use></svg></span>
+  <span class="spark" style="top:58%;left:20%;animation-delay:1.3s"><svg class=ui-icon aria-hidden=true><use href="assets/icons/lucide.svg#icon-spark"></use></svg></span>
+  <span class="spark" style="top:52%;right:10%;animation-delay:1.9s"><svg class=ui-icon aria-hidden=true><use href="assets/icons/lucide.svg#icon-spark2"></use></svg></span>
 
   <img class="syl" src="assets/syl-mascot.png" alt="Syl, the SYLORA matcha-cup mascot with a green sprout and pink heart" width="220" height="220" loading="eager" decoding="async">
   </div>
@@ -241,12 +257,24 @@ img{max-width:100%;height:auto}
   </div>
   </div>
 
-  <div class="strip wrap" style="padding:0">
-    <div><b>50</b><span>points per approved action</span></div>
-    <div><b>1,000,000</b><span>points ever — and never more</span></div>
-    <div><b>~15 sec</b><span>to log an action, ~$0.01 network fee</span></div>
-    <div><b>24 h</b><span>cooldown per action type — keeps it fair</span></div>
-  </div>
+  <dl class="strip" id="impactStats" aria-label="SYLORA rewards and action limits" style="scroll-margin-top:84px">
+    <div class="stat stat--reward">
+      <dt><svg class="ui-icon" aria-hidden="true"><use href="assets/icons/lucide.svg#icon-gift"></use></svg>Action reward</dt>
+      <dd><span class="stat-value"><b>50</b><span class="unit">SYL</span></span><span class="stat-note">For every approved action</span></dd>
+    </div>
+    <div class="stat stat--supply">
+      <dt><svg class="ui-icon" aria-hidden="true"><use href="assets/icons/lucide.svg#icon-lock"></use></svg>Lifetime supply</dt>
+      <dd><span class="stat-value"><b>1,000,000</b></span><span class="stat-note">SYL points. Fixed, forever.</span></dd>
+    </div>
+    <div class="stat">
+      <dt><svg class="ui-icon" aria-hidden="true"><use href="assets/icons/lucide.svg#icon-camera"></use></svg>Log an action</dt>
+      <dd><span class="stat-value"><b>~15</b><span class="unit">sec</span></span><span class="stat-note">Estimated time to log<br>~$0.01 network fee</span></dd>
+    </div>
+    <div class="stat">
+      <dt><svg class="ui-icon" aria-hidden="true"><use href="assets/icons/lucide.svg#icon-calendar"></use></svg>Daily limit</dt>
+      <dd><span class="stat-value"><b>24</b><span class="unit">hours</span></span><span class="stat-note">Between actions of the same type</span></dd>
+    </div>
+  </dl>
 </div></header>
 
 <!-- ===== HOW IT WORKS ===== -->
@@ -256,17 +284,17 @@ img{max-width:100%;height:auto}
   <p class="lead">No blockchain knowledge needed. All you need is a phone, a camera, and good intentions.</p>
   <div class="steps">
     <div class="step"><span class="n">1</span>
-      <div class="ic"><svg class=ui-icon aria-hidden=true><use href=#icon-camera></use></svg></div>
+      <div class="ic"><svg class=ui-icon aria-hidden=true><use href="assets/icons/lucide.svg#icon-camera"></use></svg></div>
       <h3>Snap &amp; describe</h3>
       <p>Your proof photo is locked with a digital fingerprint on your phone — it can't be swapped with a different picture later.</p>
     </div>
     <div class="step"><span class="n">2</span>
-      <div class="ic"><svg class=ui-icon aria-hidden=true><use href=#icon-handshake></use></svg></div>
+      <div class="ic"><svg class=ui-icon aria-hidden=true><use href="assets/icons/lucide.svg#icon-handshake"></use></svg></div>
       <h3>Neighbours verify</h3>
       <p>A local organiser checks the original photo against its recorded fingerprint. Once approved, 50 SYL moves from the fixed reward pool to your wallet.</p>
     </div>
     <div class="step"><span class="n">3</span>
-      <div class="ic"><svg class=ui-icon aria-hidden=true><use href=#icon-receipt></use></svg></div>
+      <div class="ic"><svg class=ui-icon aria-hidden=true><use href="assets/icons/lucide.svg#icon-receipt"></use></svg></div>
       <h3>Record a redemption</h3>
       <p>Try an on-chain redemption that burns your SYL. Usable partner vouchers are still being developed.</p>
     </div>
@@ -278,12 +306,12 @@ img{max-width:100%;height:auto}
   <div class="kicker">Today's menu</div>
   <h2>Pick your "order".</h2>
   <div class="menu">
-    <div class="menu-h"><svg class=ui-icon aria-hidden=true><use href=#icon-cup></use></svg> Today's board — 1 action = 50 points</div>
-    <div class="mi"><span class="em"><svg class=ui-icon aria-hidden=true><use href=#icon-sprout></use></svg></span><span class="nm">Plant a tree</span><span class="dots"></span><span class="pr">50 pts</span></div>
-    <div class="mi"><span class="em"><svg class=ui-icon aria-hidden=true><use href=#icon-beach></use></svg></span><span class="nm">Clean a beach or river</span><span class="dots"></span><span class="pr">50 pts</span></div>
-    <div class="mi"><span class="em"><svg class=ui-icon aria-hidden=true><use href=#icon-recycle></use></svg></span><span class="nm">Drop off recycling</span><span class="dots"></span><span class="pr">50 pts</span></div>
-    <div class="mi"><span class="em"><svg class=ui-icon aria-hidden=true><use href=#icon-leaf></use></svg></span><span class="nm">Compost kitchen waste</span><span class="dots"></span><span class="pr">50 pts</span></div>
-    <div class="mi"><span class="em"><svg class=ui-icon aria-hidden=true><use href=#icon-globe></use></svg></span><span class="nm">Other green action</span><span class="dots"></span><span class="pr">50 pts</span></div>
+    <div class="menu-h"><svg class=ui-icon aria-hidden=true><use href="assets/icons/lucide.svg#icon-cup"></use></svg> Today's board — 1 action = 50 points</div>
+    <div class="mi"><span class="em"><svg class=ui-icon aria-hidden=true><use href="assets/icons/lucide.svg#icon-sprout"></use></svg></span><span class="nm">Plant a tree</span><span class="dots"></span><span class="pr">50 pts</span></div>
+    <div class="mi"><span class="em"><svg class=ui-icon aria-hidden=true><use href="assets/icons/lucide.svg#icon-beach"></use></svg></span><span class="nm">Clean a beach or river</span><span class="dots"></span><span class="pr">50 pts</span></div>
+    <div class="mi"><span class="em"><svg class=ui-icon aria-hidden=true><use href="assets/icons/lucide.svg#icon-recycle"></use></svg></span><span class="nm">Drop off recycling</span><span class="dots"></span><span class="pr">50 pts</span></div>
+    <div class="mi"><span class="em"><svg class=ui-icon aria-hidden=true><use href="assets/icons/lucide.svg#icon-leaf"></use></svg></span><span class="nm">Compost kitchen waste</span><span class="dots"></span><span class="pr">50 pts</span></div>
+    <div class="mi"><span class="em"><svg class=ui-icon aria-hidden=true><use href="assets/icons/lucide.svg#icon-globe"></use></svg></span><span class="nm">Other green action</span><span class="dots"></span><span class="pr">50 pts</span></div>
   </div>
   <p class="lead" style="margin-top:16px;font-size:13.5px">One action type per 24 h — so the consistent ones earn more, not the spam-clickers.</p>
 </div></section>
@@ -293,10 +321,10 @@ img{max-width:100%;height:auto}
   <div class="kicker">Our kitchen promise</div>
   <h2>Why you can trust this.</h2>
   <div class="trust">
-    <div class="tr"><div class="big"><svg class=ui-icon aria-hidden=true><use href=#icon-lock></use></svg></div><h3>No minting, ever</h3><p>1 million points were minted once, and that's it. There is no "print more" button — not even for the deployer.</p></div>
-    <div class="tr"><div class="big"><svg class=ui-icon aria-hidden=true><use href=#icon-image></use></svg></div><h3>Photo locked at submit</h3><p>The photo's fingerprint is recorded the moment you submit. Swap the picture later? The system catches it.</p></div>
-    <div class="tr"><div class="big"><svg class=ui-icon aria-hidden=true><use href=#icon-flame></use></svg></div><h3>Redemptions burn SYL</h3><p>A test redemption permanently destroys the chosen amount and creates a public record. Voucher fulfillment is not live yet.</p></div>
-    <div class="tr"><div class="big"><svg class=ui-icon aria-hidden=true><use href=#icon-eye></use></svg></div><h3>Everything is public</h3><p>Who got approved for what, anyone can check online. A ledger that cannot be quietly edited.</p></div>
+    <div class="tr"><div class="big"><svg class=ui-icon aria-hidden=true><use href="assets/icons/lucide.svg#icon-lock"></use></svg></div><h3>No minting, ever</h3><p>1 million points were minted once, and that's it. There is no "print more" button — not even for the deployer.</p></div>
+    <div class="tr"><div class="big"><svg class=ui-icon aria-hidden=true><use href="assets/icons/lucide.svg#icon-image"></use></svg></div><h3>Photo locked at submit</h3><p>The photo's fingerprint is recorded the moment you submit. Swap the picture later? The system catches it.</p></div>
+    <div class="tr"><div class="big"><svg class=ui-icon aria-hidden=true><use href="assets/icons/lucide.svg#icon-flame"></use></svg></div><h3>Redemptions burn SYL</h3><p>A test redemption permanently destroys the chosen amount and creates a public record. Voucher fulfillment is not live yet.</p></div>
+    <div class="tr"><div class="big"><svg class=ui-icon aria-hidden=true><use href="assets/icons/lucide.svg#icon-eye"></use></svg></div><h3>Everything is public</h3><p>Who got approved for what, anyone can check online. A ledger that cannot be quietly edited.</p></div>
   </div>
 </div></section>
 
@@ -320,8 +348,7 @@ img{max-width:100%;height:auto}
   <p>Start with one planted tree. The system will remember the rest — forever.</p>
   <div class="cta" style="margin-top:22px">
     <a class="btn btn-p" href="app.html">Open the SYLORA app</a>
-    <a class="btn btn-s" style="background:rgba(255,255,255,.14);color:#fff" href="#how">Explore the ecosystem</a>
-    <a class="btn btn-s" href="https://scan.botchain.ai/address/0xA26FE9756D942A491385B542f6E60e1163C7a6a3" target="_blank" rel="noopener noreferrer">View on Botchain Explorer <svg class="ui-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M14 5h5v5M19 5l-9 9M18 13v6H5V6h6" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" fill="none"/></svg></a>
+    <a class="btn btn-s" href="https://scan.botchain.ai/address/0xA26FE9756D942A491385B542f6E60e1163C7a6a3" target="_blank" rel="noopener noreferrer">View on Botchain Explorer <svg class="ui-icon" aria-hidden="true"><use href="assets/icons/lucide.svg#icon-external"></use></svg></a>
   </div>
 </div></div>
 

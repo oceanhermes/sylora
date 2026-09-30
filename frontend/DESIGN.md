@@ -98,3 +98,20 @@ Larangan: tanpa indigo/violet AI-default, tanpa gradient ungu crypto, tanpa hita
 - ☐ Tap target ≥ 44px, radius besar tetap focus-visible ring 2px matcha-deep offset 2
 - ☐ Heading hierarchy utuh, `label for=` semua input
 - ☐ Test 360px: hero stack vertikal, strip jadi 2 kolom, tabel → kartu
+
+## 7. Ikon antarmuka
+
+- Gunakan Lucide 1.49.0, set ikon yang dipakai shadcn/ui, sebagai sprite SVG lokal di `assets/icons/lucide.svg`. Satu aset dipakai landing dan aplikasi supaya bentuknya konsisten tanpa CDN atau JavaScript tambahan.
+- Garis 2px, ujung membulat, dan warna `currentColor` menyatu dengan tema kawaii coffee. Ukuran dasar 20px, tombol 18px, navigasi 20–23px, kartu aksi 27px, dan kartu informasi landing 30–32px.
+- Pilih bentuk berdasarkan fungsi: TreeDeciduous/Sprout untuk menanam, WavesHorizontal untuk sungai/pantai, Recycle untuk daur ulang, Leaf untuk kompos, Unplug untuk hemat listrik, CupSoda untuk tumbler, Wallet untuk dompet, Coins untuk saldo, UserRoundPlus untuk mengikuti akun, dan Gift untuk penukaran.
+- Menu/X menunjukkan buka/tutup, ArrowLeft menunjukkan kembali, dan ExternalLink menandai tautan explorer. Sparkles/Plus tetap menjadi aksen kecil di sekitar maskot sesuai suasana ceria merek.
+- Ikon dekoratif memakai `aria-hidden="true"`; nama tombol dan label teks tetap menjelaskan aksinya. Navigasi aktif memakai matcha-deep, navigasi lain cocoa yang lebih lembut dengan focus ring yang terlihat.
+- Arah perubahan ikon: ENERGY 2 / RHYTHM 2 / MOTION 1. Hierarki halaman mengikuti desain yang ada, dengan ukuran ikon mengikuti fungsi dan tanpa menambah animasi.
+
+## 8. Strip statistik landing
+
+- Panel matcha mempertahankan identitas kedai; angka 50 SYL memakai sakura sebagai fokus hadiah. Angka lainnya berwarna cream, dengan satuan lebih kecil agar nilai cepat terbaca.
+- Label dan ikon mengidentifikasi empat metrik; pembatas tipis memisahkan informasi tanpa membuat empat kartu terpisah. `dl`, `dt`, dan `dd` menjaga hubungan label dengan nilai secara semantik.
+- Empat kolom pada desktop, dua kolom pada lebar 1000px ke bawah. Padding dan ukuran angka supply diperkecil di HP supaya 1,000,000 tetap utuh.
+- ENERGY 2 / RHYTHM 2 / MOTION 1. Tidak ada animasi baru. Nilai dan estimasi mengikuti informasi yang sudah ada di landing.
+- Validasi lingkup strip: PASS pada desktop 1280px dan HP 360px, grid sesuai breakpoint dan tidak ada overflow. PASS kontras teks cream pada matcha lebih dari 4.5:1, angka besar sakura lebih dari 3:1. Ikon tetap dekoratif dan seluruh metrik memiliki label teks.

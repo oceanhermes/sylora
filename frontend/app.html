@@ -166,15 +166,17 @@ nav{position:fixed;bottom:0;left:0;right:0;width:100vw;max-width:none;margin:0;z
 .navbar button.on{color:var(--matcha-deep)}
 .navbar button.on .ic{filter:none;opacity:1;transform:translateY(-1px)}
 
-.ui-icon{display:inline-block;width:1.05em;height:1.05em;vertical-align:-.16em;stroke:currentColor;fill:none;flex:none}.ui-icon.big{width:1.25em;height:1.25em}.spark .ui-icon{width:1em;height:1em}.task .ui-icon,.chal .ui-icon{width:2em;height:2em}.card h3 .ui-icon{width:1.15em;height:1.15em}.navbar .ui-icon{width:24px;height:24px;display:block;vertical-align:0}.tr .ui-icon{width:30px;height:30px}.mi .ui-icon{width:26px;height:26px}.rank-pill .ui-icon{width:1em;height:1em}.ticker .ui-icon{width:1em;height:1em}.brand .ui-icon{width:1em;height:1em}.end .ui-icon{width:78px;height:78px}.</style>
+.ui-icon{display:inline-block;width:1.05em;height:1.05em;vertical-align:-.16em;stroke:currentColor;fill:none;flex:none}.ui-icon.big{width:1.25em;height:1.25em}.spark .ui-icon{width:1em;height:1em}.task .ui-icon,.chal .ui-icon{width:2em;height:2em}.card h3 .ui-icon{width:1.15em;height:1.15em}.navbar .ui-icon{width:24px;height:24px;display:block;vertical-align:0}.tr .ui-icon{width:30px;height:30px}.mi .ui-icon{width:26px;height:26px}.rank-pill .ui-icon{width:1em;height:1em}.ticker .ui-icon{width:1em;height:1em}.brand .ui-icon{width:1em;height:1em}.end .ui-icon{width:78px;height:78px}</style>
 <style>
 /* The icon sizes follow their containers, never the large emoji font size. */
-.ui-icon{width:1.15em;height:1.15em;vertical-align:-.18em}
+.ui-icon{width:20px;height:20px;vertical-align:-.2em}
 .task .em{width:44px;height:44px;margin-bottom:10px;border-radius:13px;background:var(--matcha-foam);color:var(--matcha-deep);display:grid;place-items:center;font-size:16px;line-height:1}
 .task .ui-icon{width:27px;height:27px}
 .chal .ui-icon{width:26px;height:26px}
 .card h3 .ui-icon{width:20px;height:20px}
-.navbar button .ic{filter:none;opacity:.78;line-height:0}
+.navbar button{color:#755d50}
+.navbar button:focus-visible{outline:2px solid var(--matcha-deep);outline-offset:-2px;background:var(--matcha-foam)}
+.navbar button .ic{filter:none;opacity:1;line-height:0}
 .navbar .ui-icon{width:23px;height:23px}
 .navbar button .lb{white-space:normal;overflow:visible;text-overflow:clip;line-height:1.15;overflow-wrap:anywhere}
 .list-item .ui-icon{width:22px;height:22px}
@@ -260,36 +262,8 @@ img{max-width:100%;height:auto}
 }
 </style>
 </head>
-<svg aria-hidden=true style="position:absolute;width:0;height:0;overflow:hidden"><defs><symbol id="icon-cup" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M5 8h14l-1 10H6L5 8Z"/><path d="M8 8c0-4 2-5 4-5s4 1 4 5M9 13h.01M15 13h.01M10 16c1 .8 3 .8 4 0" fill="none"/></symbol><symbol id="icon-recycle" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="m12 3 3 5h-3a7 7 0 0 0-6 3M5 11l-2 3 5 1M19 13l-3-5 3-1M16 8a7 7 0 0 1-1 9M15 17h-6l1 3M9 17a7 7 0 0 1-3-6" fill="none"/></symbol><symbol id="icon-spark" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v18M3 12h18M5.6 5.6l12.8 12.8M18.4 5.6 5.6 18.4"/></symbol><symbol id="icon-spark2" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v18M3 12h18"/></symbol><symbol id="icon-globe" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c3 3 3 15 0 18M12 3c-3 3-3 15 0 18" fill="none"/></symbol><symbol id="icon-sprout" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21V9M12 12C8 12 5 9 5 5c4 0 7 3 7 7ZM12 10c0-4 3-7 7-7 0 4-3 7-7 7Z" fill="none"/></symbol><symbol id="icon-leaf" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M20 4C10 4 4 8 4 15c0 2 1 4 3 4 7 0 11-6 13-15Z" fill="none"/><path d="M4 20 14 10" fill="none"/></symbol><symbol id="icon-beach" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19c3-2 5-2 8 0s5 2 8 0M4 15c3-2 5-2 8 0s5 2 8 0M12 4v9M8 7l4-3 4 3" fill="none"/></symbol><symbol id="icon-eye" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12s3-6 9-6 9 6 9 6-3 6-9 6-9-6-9-6Z" fill="none"/><circle cx="12" cy="12" r="2"/></symbol><symbol id="icon-camera" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 8h4l1.5-2h5L16 8h4v10H4V8Z" fill="none"/><circle cx="12" cy="13" r="3" fill="none"/></symbol><symbol id="icon-lock" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="10" width="14" height="10" rx="2" fill="none"/><path d="M8 10V7a4 4 0 0 1 8 0v3" fill="none"/></symbol><symbol id="icon-flame" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21c4 0 7-3 7-7 0-4-3-7-5-10-1 3-2 4-3 5-1-2-2-3-2-5-2 2-5 6-5 10 0 4 3 7 8 7Z" fill="none"/></symbol><symbol id="icon-image" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="5" width="16" height="14" rx="2" fill="none"/><circle cx="9" cy="10" r="1"/><path d="m5 17 4-4 3 3 2-2 5 4" fill="none"/></symbol><symbol id="icon-handshake" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="m4 11 4-4 4 2 4-2 4 4-5 5-3-2-3 2-5-5Z" fill="none"/><path d="m9 13 3 2 3-3" fill="none"/></symbol><symbol id="icon-receipt" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M6 3h12v18l-3-2-3 2-3-2-3 2V3Z" fill="none"/><path d="M9 8h6M9 12h6" fill="none"/></symbol><symbol id="icon-settings" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3" fill="none"/><path d="M19 12a7 7 0 0 0-.1-1l2-1-2-3-2 1a8 8 0 0 0-2-1l-.3-2h-3l-.3 2a8 8 0 0 0-2 1l-2-1-2 3 2 1a7 7 0 0 0 0 2l-2 1 2 3 2-1a8 8 0 0 0 2 1l.3 2h3l.3-2a8 8 0 0 0 2-1l2 1 2-3-2-1c.1-.3.1-.7.1-1Z" fill="none"/></symbol><symbol id="icon-bolt" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="m13 2-8 11h6l-1 9 8-11h-6l1-9Z" fill="none"/></symbol><symbol id="icon-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="m5 12 4 4L19 6" fill="none"/></symbol><symbol id="icon-hand" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M7 11V6a1 1 0 0 1 2 0v4V5a1 1 0 0 1 2 0v5V4a1 1 0 0 1 2 0v6V6a1 1 0 0 1 2 0v8l2-2a1.5 1.5 0 0 1 2 2l-4 5H9c-2 0-3-2-3-4v-4a1 1 0 0 1 1-1Z" fill="none"/></symbol><symbol id="icon-pen" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="m4 20 4-1 10-10-3-3L5 16l-1 4Z" fill="none"/><path d="m13 7 3 3" fill="none"/></symbol><symbol id="icon-x" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="m6 6 12 12M18 6 6 18" fill="none"/></symbol><symbol id="icon-tree" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21V12M8 21h8M12 3 7 11h3l-3 4h10l-3-4h3l-5-8Z" fill="none"/></symbol><symbol id="icon-gift" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="9" width="16" height="11" rx="1" fill="none"/><path d="M12 9v11M4 13h16M12 9H8a2 2 0 1 1 2-2c2 0 2 2 2 2Zm0 0h4a2 2 0 1 0-2-2c-2 0-2 2-2 2Z" fill="none"/></symbol><symbol id="icon-ticket" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 7a2 2 0 0 0 0 4v2a2 2 0 0 0 0 4h16a2 2 0 0 0 0-4v-2a2 2 0 0 0 0-4H4Z" fill="none"/><path d="M12 7v10" fill="none"/></symbol><symbol id="icon-medal" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="14" r="6" fill="none"/><path d="m8 9-1-6 5 3 5-3-1 6" fill="none"/></symbol><symbol id="icon-trophy" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M8 4h8v5a4 4 0 0 1-8 0V4ZM12 13v5M8 21h8M5 5H3v2a4 4 0 0 0 4 4M19 5h2v2a4 4 0 0 1-4 4" fill="none"/></symbol><symbol id="icon-community" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="8" r="3" fill="none"/><circle cx="17" cy="9" r="2" fill="none"/><path d="M3 19c0-3 2-5 6-5s6 2 6 5M15 14c3 0 5 2 5 5" fill="none"/></symbol><symbol id="icon-home" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="m3 11 9-8 9 8v9H3v-9Z" fill="none"/><path d="M9 20v-6h6v6" fill="none"/></symbol><symbol id="icon-user" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="4" fill="none"/><path d="M4 21c0-4 3-7 8-7s8 3 8 7" fill="none"/></symbol><symbol id="icon-calendar" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="5" width="16" height="15" rx="2" fill="none"/><path d="M8 3v4M16 3v4M4 10h16" fill="none"/></symbol><symbol id="icon-book" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M5 4h11a3 3 0 0 1 3 3v13H8a3 3 0 0 0-3 1V4Z" fill="none"/><path d="M8 20V7" fill="none"/></symbol><symbol id="icon-upload" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 16V4M8 8l4-4 4 4M5 13v6h14v-6" fill="none"/></symbol><symbol id="icon-plug" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M9 3v6M15 3v6M7 8h10v2a5 5 0 0 1-10 0V8ZM12 15v6" fill="none"/></symbol><symbol id="icon-search" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="10" cy="10" r="6" fill="none"/><path d="m15 15 5 5" fill="none"/></symbol><symbol id="icon-link" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="m10 13 4-4M7 17H5a4 4 0 0 1 0-8h4M17 7h2a4 4 0 0 1 0 8h-4" fill="none"/></symbol><symbol id="icon-bag" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M5 8h14l-1 12H6L5 8ZM9 8a3 3 0 0 1 6 0" fill="none"/></symbol><symbol id="icon-worm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 15c3 5 7 5 8 1s-3-7 1-9c4-2 6 1 7 4" fill="none"/></symbol></defs></svg><body>
+<body>
 
-<svg aria-hidden="true" width="0" height="0" style="position:absolute;overflow:hidden">
-  <defs>
-    <symbol id="action-tree" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
-      <path d="M12 20v-9M4 20h16M12 13c-4 0-6-2.6-6-6 3.8 0 6 2 6 6ZM12 11c0-3.8 2.1-6 6-6 0 3.6-2 6-6 6Z"/>
-    </symbol>
-    <symbol id="action-shore" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
-      <circle cx="17.5" cy="6.5" r="2.5"/><path d="M3 14c2.2 0 2.2-2 4.5-2s2.3 2 4.5 2 2.3-2 4.5-2 2.3 2 4.5 2M3 19c2.2 0 2.2-2 4.5-2s2.3 2 4.5 2 2.3-2 4.5-2 2.3 2 4.5 2"/>
-    </symbol>
-    <symbol id="action-recycle" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
-      <path d="m10 3 2-1 2 1 2.4 4M16.4 7H20l-1.8 3M21 13l1 2-1 2-2.4 4H14M14 21l-1.8-3 1.8-3M9 21H5l-2-3.5 2.3-4M5.3 13.5l3.5.1-1.8 3M7 7l2.4-4"/>
-    </symbol>
-    <symbol id="action-compost" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
-      <path d="M5 8h14l-1 12H6L5 8ZM4 8h16M9 5h6M12 20v-5M12 16c-2.5 0-4-1.5-4-4 2.5 0 4 1.5 4 4ZM12 15c0-2.5 1.5-4 4-4 0 2.5-1.5 4-4 4Z"/>
-    </symbol>
-    <symbol id="action-unplug" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
-      <path d="M8 3v5M14 3v5M6 8h10v3a5 5 0 0 1-10 0V8ZM11 16v5M18 7l3-3M19 11h3"/>
-    </symbol>
-    <symbol id="action-tumbler" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
-      <path d="M6 7h12l-1 13H7L6 7ZM5 7h14M8 4h8M14 4l1-2M9 12h6"/>
-    </symbol>
-    <symbol id="action-wallet" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
-      <path d="M5 6V4h13v3M4 7h15a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V9a2 2 0 0 1 2-2ZM21 12h-7a2 2 0 0 0 0 4h7"/><circle cx="15" cy="14" r=".6" fill="currentColor" stroke="none"/>
-    </symbol>
-    <symbol id="action-back" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
-      <path d="M19 12H5m7-7-7 7 7 7"/>
-    </symbol>
-  </defs>
-</svg>
 <header>
   <div class="bar">
     <a class="brand" href="index.html"><img src="assets/syl-logo.png" alt="Syl" width="28" height="28" loading="eager" decoding="async" style="border-radius:8px"><span class="wordmark">Sylora</span></a>
@@ -302,7 +276,7 @@ img{max-width:100%;height:auto}
 
   <!-- ============ TAB: HOME ============ -->
   <section class="tab on" id="tab-home">
-    <h1 class="page-title">Hello, kind soul <svg class=ui-icon aria-hidden=true><use href=#icon-sprout></use></svg></h1>
+    <h1 class="page-title">Hello, kind soul <svg class=ui-icon aria-hidden=true><use href="assets/icons/lucide.svg#icon-sprout"></use></svg></h1>
     <p class="page-sub">Your small actions are recorded, capped, and impossible to cheat.</p>
 
     <div class="ticker" id="ticker">
@@ -318,7 +292,7 @@ img{max-width:100%;height:auto}
         <span class="chip" id="streakChip">0-day streak</span>
       </div>
       <div style="margin-top:14px">
-        <button class="btn btn-s btn-w" id="connectBtn"><svg class=ui-icon aria-hidden=true><use href=#action-wallet></use></svg> Connect digital wallet</button>
+        <button class="btn btn-s btn-w" id="connectBtn"><svg class=ui-icon aria-hidden=true><use href="assets/icons/lucide.svg#action-wallet"></use></svg> Connect digital wallet</button>
       </div>
     </div>
 
@@ -330,8 +304,8 @@ img{max-width:100%;height:auto}
     </div>
 
     <div class="card">
-      <h3><span class="em"><svg class=ui-icon aria-hidden=true><use href=#icon-medal></use></svg></span> Your SYL</h3>
-      <div class="balance-line"><svg class=ui-icon aria-hidden=true><use href=#icon-sprout></use></svg><span class="balance-label">Wallet balance</span><strong class="balance-value" id="myRankValue">0 SYL</strong></div>
+      <h3><span class="em"><svg class=ui-icon aria-hidden=true><use href="assets/icons/lucide.svg#icon-medal"></use></svg></span> Your SYL</h3>
+      <div class="balance-line"><svg class=ui-icon aria-hidden=true><use href="assets/icons/lucide.svg#icon-sprout"></use></svg><span class="balance-label">Wallet balance</span><strong class="balance-value" id="myRankValue">0 SYL</strong></div>
       <div class="hint">Approved actions send 50 SYL directly to your wallet. No withdrawal is needed.</div>
       <button class="btn btn-s btn-w" id="addTokenBtn" disabled style="margin-top:12px">Show SYL in wallet</button>
       <div class="hint" id="tokenWalletHint">Connect your wallet to show the SYL token.</div>
@@ -339,7 +313,7 @@ img{max-width:100%;height:auto}
 
     <div id="verifyWrap" hidden>
       <div class="card">
-        <h3><span class="em"><svg class=ui-icon aria-hidden=true><use href=#icon-search></use></svg></span> Verifier desk</h3>
+        <h3><span class="em"><svg class=ui-icon aria-hidden=true><use href="assets/icons/lucide.svg#icon-search"></use></svg></span> Verifier desk</h3>
         <table class="pending-table">
           <thead><tr><th>Proof awaiting review</th><th></th></tr></thead>
           <tbody id="pendingTable"></tbody>
@@ -350,10 +324,10 @@ img{max-width:100%;height:auto}
     </div>
 
     <div class="card" style="background:var(--matcha-foam);border-color:#d5ead9">
-      <h3><span class="em"><svg class=ui-icon aria-hidden=true><use href=#icon-cup></use></svg></span> How it works</h3>
+      <h3><span class="em"><svg class=ui-icon aria-hidden=true><use href="assets/icons/lucide.svg#icon-cup"></use></svg></span> How it works</h3>
       <div style="font-size:13.5px;color:var(--matcha-deep);font-weight:700">
-        1. Pick an action, add your wallet address and photo, then submit <svg class=ui-icon aria-hidden=true><use href=#icon-camera></use></svg><br>
-        2. A verifier sees your submission and approves or rejects it <svg class=ui-icon aria-hidden=true><use href=#icon-check></use></svg><br>
+        1. Pick an action, add your wallet address and photo, then submit <svg class=ui-icon aria-hidden=true><use href="assets/icons/lucide.svg#icon-camera"></use></svg><br>
+        2. A verifier sees your submission and approves or rejects it <svg class=ui-icon aria-hidden=true><use href="assets/icons/lucide.svg#icon-check"></use></svg><br>
         3. Receive 50 SYL points after approval. The <b>Redeem</b> tab records test redemptions; usable vouchers are not available yet.
       </div>
     </div>
@@ -361,13 +335,13 @@ img{max-width:100%;height:auto}
 
   <!-- ============ TAB: CHALLENGES ============ -->
   <section class="tab" id="tab-tantangan">
-    <h1 class="page-title">Challenges <svg class=ui-icon aria-hidden=true><use href=#icon-trophy></use></svg></h1>
+    <h1 class="page-title">Challenges <svg class=ui-icon aria-hidden=true><use href="assets/icons/lucide.svg#icon-trophy"></use></svg></h1>
     <p class="page-sub">Help more people discover Sylora. Submit a public link and screenshot; approved challenges earn 50 SYL.</p>
     <div class="hint gasless-notice">Submitting needs no wallet confirmation. A verifier reviews your request and pays the transaction fee.</div>
 
     <div class="chal-wrap" data-challenge="one">
       <div class="chal">
-        <div class="em"><svg class=ui-icon aria-hidden=true><use href=#icon-bolt></use></svg></div>
+        <div class="em"><svg class=ui-icon aria-hidden=true><use href="assets/icons/lucide.svg#icon-bolt"></use></svg></div>
         <div><div class="tt">One-time follow</div><div class="ss">Follow Sylora on X (Twitter) once.</div><div class="meta" id="chOne"></div></div>
         <button class="btn btn-s btn-sm join" data-ch="one">Choose</button>
       </div>
@@ -377,7 +351,7 @@ img{max-width:100%;height:auto}
 
     <div class="chal-wrap" data-challenge="daily">
       <div class="chal">
-        <div class="em"><svg class=ui-icon aria-hidden=true><use href=#icon-calendar></use></svg></div>
+        <div class="em"><svg class=ui-icon aria-hidden=true><use href="assets/icons/lucide.svg#icon-calendar"></use></svg></div>
         <div><div class="tt">Daily engagement</div><div class="ss">Like, comment on, or repost Sylora content on X.</div><div class="meta" id="chDaily"></div></div>
         <button class="btn btn-s btn-sm join" data-ch="daily">Choose</button>
       </div>
@@ -387,7 +361,7 @@ img{max-width:100%;height:auto}
 
     <div class="chal-wrap" data-challenge="weekly">
       <div class="chal">
-        <div class="em"><svg class=ui-icon aria-hidden=true><use href=#icon-pen></use></svg></div>
+        <div class="em"><svg class=ui-icon aria-hidden=true><use href="assets/icons/lucide.svg#icon-pen"></use></svg></div>
         <div><div class="tt">Weekly eco post</div><div class="ss">Post your eco movement this week and tag Sylora's official account.</div><div class="meta" id="chWeekly"></div></div>
         <button class="btn btn-s btn-sm join" data-ch="weekly">Choose</button>
       </div>
@@ -400,14 +374,14 @@ img{max-width:100%;height:auto}
 
   <!-- ============ TAB: ACTION ============ -->
   <section class="tab" id="tab-aksi">
-    <h1 class="page-title">Today's action <svg class=ui-icon aria-hidden=true><use href=#icon-camera></use></svg></h1>
+    <h1 class="page-title">Today's action <svg class=ui-icon aria-hidden=true><use href="assets/icons/lucide.svg#icon-camera"></use></svg></h1>
     <p class="page-sub">Pick an action, add proof, and submit it for review.</p>
     <div class="hint gasless-notice">Submitting needs no wallet confirmation. A verifier reviews your request and pays the transaction fee.</div>
 
     <div class="tasks" id="taskGrid"></div>
 
     <div class="card" id="aksiForm">
-      <h3><span class="em"><svg class=ui-icon aria-hidden=true><use href=#icon-pen></use></svg></span> Log an action</h3>
+      <h3><span class="em"><svg class=ui-icon aria-hidden=true><use href="assets/icons/lucide.svg#icon-pen"></use></svg></span> Log an action</h3>
       <label for="recipientAddress">Your wallet address (receives SYL)</label>
       <input id="recipientAddress" type="text" inputmode="text" placeholder="0x…" spellcheck="false" autocomplete="off">
       <div class="hint">An address is needed to receive SYL. You can paste it without connecting your wallet.</div>
@@ -429,23 +403,23 @@ img{max-width:100%;height:auto}
       <input type="file" id="aFile" accept="image/*" hidden>
       <div class="hint" id="actionRequirements">Add your wallet address, description, and proof photo to submit.</div>
       <div id="submitErr"></div>
-      <div style="margin-top:16px"><button class="btn btn-p btn-w" id="submitBtn" disabled><svg class=ui-icon aria-hidden=true><use href=#icon-pen></use></svg> Submit for review</button></div>
+      <div style="margin-top:16px"><button class="btn btn-p btn-w" id="submitBtn" disabled><svg class=ui-icon aria-hidden=true><use href="assets/icons/lucide.svg#icon-pen"></use></svg> Submit for review</button></div>
     </div>
   </section>
 
   <!-- ============ TAB: REDEEM ============ -->
   <section class="tab" id="tab-tukar">
-    <h1 class="page-title">Redeem points <svg class=ui-icon aria-hidden=true><use href=#icon-gift></use></svg></h1>
+    <h1 class="page-title">Redeem points <svg class=ui-icon aria-hidden=true><use href="assets/icons/lucide.svg#icon-gift"></use></svg></h1>
     <p class="page-sub">Redeemed points are destroyed forever — that's how fairness is kept.</p>
     <div class="card point-card">
       <div class="lbl">Your SYL points</div>
       <div class="big" id="myBalance">0.00 <small>pts</small></div>
     </div>
     <div class="card">
-      <h3><span class="em"><svg class=ui-icon aria-hidden=true><use href=#icon-ticket></use></svg></span> Voucher examples (not available yet)</h3>
-      <div class="list-item"><span class="em"><svg class=ui-icon aria-hidden=true><use href=#icon-sprout></use></svg></span><span class="grow">Plant seedlings</span><span class="mini">50 pts</span></div>
+      <h3><span class="em"><svg class=ui-icon aria-hidden=true><use href="assets/icons/lucide.svg#icon-ticket"></use></svg></span> Voucher examples (not available yet)</h3>
+      <div class="list-item"><span class="em"><svg class=ui-icon aria-hidden=true><use href="assets/icons/lucide.svg#icon-sprout"></use></svg></span><span class="grow">Plant seedlings</span><span class="mini">50 pts</span></div>
       <div class="list-item"><span class="em"><svg class="ui-icon" aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 8h12v6a5 5 0 0 1-5 5H9a5 5 0 0 1-5-5V8Z"/><path d="M16 9h2a3 3 0 0 1 0 6h-2M3 21h15M8 3c-1 1-1 2 0 3M12 3c-1 1-1 2 0 3"/></svg></span><span class="grow">Drink at partner café</span><span class="mini">100 pts</span></div>
-      <div class="list-item"><span class="em"><svg class=ui-icon aria-hidden=true><use href=#icon-bag></use></svg></span><span class="grow">Reusable shopping bag</span><span class="mini">150 pts</span></div>
+      <div class="list-item"><span class="em"><svg class=ui-icon aria-hidden=true><use href="assets/icons/lucide.svg#icon-bag"></use></svg></span><span class="grow">Reusable shopping bag</span><span class="mini">150 pts</span></div>
     </div>
     <div class="card">
       <label for="rAmt">Amount of points to redeem</label>
@@ -453,8 +427,8 @@ img{max-width:100%;height:auto}
       <div class="hint" id="rHint">minimum 50 SYL · points will be burned &amp; gone</div>
       <div id="redeemErr"></div>
       <div class="redeem-actions">
-        <button class="btn btn-o" id="approveBtn" disabled><svg class=ui-icon aria-hidden=true><use href=#icon-hand></use></svg> Approve redemption</button>
-        <button class="btn btn-p" id="redeemBtn" disabled><svg class=ui-icon aria-hidden=true><use href=#icon-gift></use></svg> Burn &amp; record redemption</button>
+        <button class="btn btn-o" id="approveBtn" disabled><svg class=ui-icon aria-hidden=true><use href="assets/icons/lucide.svg#icon-hand"></use></svg> Approve redemption</button>
+        <button class="btn btn-p" id="redeemBtn" disabled><svg class=ui-icon aria-hidden=true><use href="assets/icons/lucide.svg#icon-gift"></use></svg> Burn &amp; record redemption</button>
       </div>
       <div class="hint" style="margin-top:14px"><b>Demo redemption:</b> this permanently burns your SYL and records a redemption on-chain. It does not issue a usable voucher or arrange fulfillment.</div>
     </div>
@@ -462,7 +436,7 @@ img{max-width:100%;height:auto}
 
   <!-- ============ TAB: PROFILE ============ -->
   <section class="tab" id="tab-saya">
-    <h1 class="page-title">Profile <svg class=ui-icon aria-hidden=true><use href=#icon-user></use></svg></h1>
+    <h1 class="page-title">Profile <svg class=ui-icon aria-hidden=true><use href="assets/icons/lucide.svg#icon-user"></use></svg></h1>
     <div class="card">
       <div class="profile">
         <div class="avatar"></div>
@@ -471,13 +445,13 @@ img{max-width:100%;height:auto}
           <div class="st" id="meStatus">wallet not connected</div>
         </div>
       </div>
-      <div class="list-item"><span class="em"><svg class=ui-icon aria-hidden=true><use href=#icon-search></use></svg></span><span class="grow">Verifier role</span><span class="mini" id="meRole">no</span></div>
-      <div class="list-item"><span class="em"><svg class=ui-icon aria-hidden=true><use href=#icon-flame></use></svg></span><span class="grow">Action streak</span><span class="mini" id="meStreak">—</span></div>
-      <div class="list-item"><span class="em"><svg class=ui-icon aria-hidden=true><use href=#icon-gift></use></svg></span><span class="grow">Redemptions recorded</span><span class="mini" id="meVoucher">—</span></div>
+      <div class="list-item"><span class="em"><svg class=ui-icon aria-hidden=true><use href="assets/icons/lucide.svg#icon-search"></use></svg></span><span class="grow">Verifier role</span><span class="mini" id="meRole">no</span></div>
+      <div class="list-item"><span class="em"><svg class=ui-icon aria-hidden=true><use href="assets/icons/lucide.svg#icon-flame"></use></svg></span><span class="grow">Action streak</span><span class="mini" id="meStreak">—</span></div>
+      <div class="list-item"><span class="em"><svg class=ui-icon aria-hidden=true><use href="assets/icons/lucide.svg#icon-gift"></use></svg></span><span class="grow">Redemptions recorded</span><span class="mini" id="meVoucher">—</span></div>
     </div>
 
     <div class="card">
-      <h3><span class="em"><svg class=ui-icon aria-hidden=true><use href=#icon-book></use></svg></span> Your action log</h3>
+      <h3><span class="em"><svg class=ui-icon aria-hidden=true><use href="assets/icons/lucide.svg#icon-book"></use></svg></span> Your action log</h3>
       <table class="log-table">
         <thead><tr><th>Action</th><th>Status</th><th style="text-align:right">Points</th></tr></thead>
         <tbody id="myActions"><tr><td colspan="3" style="color:var(--latte);font-weight:700">Connect a wallet to see your actions.</td></tr></tbody>
@@ -485,7 +459,7 @@ img{max-width:100%;height:auto}
     </div>
 
     <div class="card">
-      <h3><span class="em"><svg class=ui-icon aria-hidden=true><use href=#icon-settings></use></svg></span> System settings</h3>
+      <h3><span class="em"><svg class=ui-icon aria-hidden=true><use href="assets/icons/lucide.svg#icon-settings"></use></svg></span> System settings</h3>
       <div class="hint" style="margin-top:0" id="netInfo">Contracts are auto-loaded for this network. Only the organiser can change the address.</div>
       <div class="cfg-grid" id="ownerCfg" hidden>
         <label for="cfgReg">Action registry address</label>
@@ -500,7 +474,7 @@ img{max-width:100%;height:auto}
     </div>
 
     <div class="profile-return">
-      <a href="index.html"><svg class="ui-icon" aria-hidden="true"><use href="#action-back"></use></svg> Back to site</a>
+      <a href="index.html"><svg class="ui-icon" aria-hidden="true"><use href="assets/icons/lucide.svg#action-back"></use></svg> Back to site</a>
     </div>
   </section>
 
@@ -509,18 +483,18 @@ img{max-width:100%;height:auto}
 <nav>
   <a class="side-brand" href="index.html"><img src="assets/syl-logo.png" alt="" width="34" height="34"><span>Syl<span class="o">o</span>ra</span></a>
   <div class="navbar" id="navbar">
-    <button class="on" data-tab="home"><span class="ic"><svg class=ui-icon aria-hidden=true><use href=#icon-home></use></svg></span><span class="lb">Home</span></button>
-    <button data-tab="tantangan"><span class="ic"><svg class=ui-icon aria-hidden=true><use href=#icon-trophy></use></svg></span><span class="lb">Challenges</span></button>
-    <button data-tab="aksi"><span class="ic"><svg class=ui-icon aria-hidden=true><use href=#icon-camera></use></svg></span><span class="lb">Action</span></button>
-    <button data-tab="tukar"><span class="ic"><svg class=ui-icon aria-hidden=true><use href=#icon-gift></use></svg></span><span class="lb">Redeem</span></button>
-    <button data-tab="saya"><span class="ic"><svg class=ui-icon aria-hidden=true><use href=#icon-user></use></svg></span><span class="lb">Profile</span></button>
+    <button class="on" data-tab="home"><span class="ic"><svg class=ui-icon aria-hidden=true><use href="assets/icons/lucide.svg#icon-home"></use></svg></span><span class="lb">Home</span></button>
+    <button data-tab="tantangan"><span class="ic"><svg class=ui-icon aria-hidden=true><use href="assets/icons/lucide.svg#icon-trophy"></use></svg></span><span class="lb">Challenges</span></button>
+    <button data-tab="aksi"><span class="ic"><svg class=ui-icon aria-hidden=true><use href="assets/icons/lucide.svg#icon-camera"></use></svg></span><span class="lb">Action</span></button>
+    <button data-tab="tukar"><span class="ic"><svg class=ui-icon aria-hidden=true><use href="assets/icons/lucide.svg#icon-gift"></use></svg></span><span class="lb">Redeem</span></button>
+    <button data-tab="saya"><span class="ic"><svg class=ui-icon aria-hidden=true><use href="assets/icons/lucide.svg#icon-user"></use></svg></span><span class="lb">Profile</span></button>
   </div>
 </nav>
 
 <div class="proof-modal" id="proofModal" role="dialog" aria-modal="true" aria-labelledby="proofTitle">
   <div class="proof-dialog">
     <div class="proof-scroll">
-    <div class="proof-head"><div><h2 id="proofTitle">Submit challenge proof</h2><div class="proof-copy" id="proofSubtitle">Show the community that you completed this action.</div></div><button class="proof-close" id="proofClose" aria-label="Close">×</button></div>
+    <div class="proof-head"><div><h2 id="proofTitle">Submit challenge proof</h2><div class="proof-copy" id="proofSubtitle">Show the community that you completed this action.</div></div><button class="proof-close" id="proofClose" aria-label="Close"><svg class="ui-icon" aria-hidden="true"><use href="assets/icons/lucide.svg#icon-x"></use></svg></button></div>
     <div class="proof-reward"><span>Reward if approved</span><strong>50 SYL</strong></div>
     <label for="challengeRecipient">Your wallet address (receives SYL)</label>
     <input id="challengeRecipient" type="text" placeholder="0x…" spellcheck="false" autocomplete="off">
@@ -640,7 +614,7 @@ const TASKS = [
   {type:"other", icon:"action-tumbler", title:"Bring a tumbler", sub:"skip disposable cups on purchases"}
 ];
 $("taskGrid").innerHTML = TASKS.map((t,i)=>`<button class="task" data-i="${i}">
-  <span class="pts">+50</span><span class="em"><svg class="ui-icon" aria-hidden="true"><use href="#${t.icon}"></use></svg></span>
+  <span class="pts">+50</span><span class="em"><svg class="ui-icon" aria-hidden="true"><use href="assets/icons/lucide.svg#${t.icon}"></use></svg></span>
   <div class="tt">${t.title}</div><div class="ss">${t.sub}</div></button>`).join("");
 $("taskGrid").addEventListener("click", e=>{
   const b=e.target.closest(".task"); if(!b) return;
@@ -860,12 +834,12 @@ function row(a){
     <td><div class="type">${challenge?"Challenge: "+esc(challenge.name):TYPES[a.type]||esc(a.type)}</div><div class="desc">${esc(challenge?challenge.detail:a.desc)}</div>
         <div class="id">${a.id} · ${timeAgo(a.ts)}</div></td>
     <td>${badge(a.status)}</td>
-    <td style="text-align:right;font-weight:800;color:var(--matcha-deep)">${a.status===1n?fmt(a.reward):"—"}${a.status===1n&&a.streak>1n?`<div style="font-size:10.5px;color:var(--latte)"><svg class=ui-icon aria-hidden=true><use href=#icon-flame></use></svg> ×${a.streak}</div>`:""}</td></tr>`;
+    <td style="text-align:right;font-weight:800;color:var(--matcha-deep)">${a.status===1n?fmt(a.reward):"—"}${a.status===1n&&a.streak>1n?`<div style="font-size:10.5px;color:var(--latte)"><svg class=ui-icon aria-hidden=true><use href="assets/icons/lucide.svg#icon-flame"></use></svg> ×${a.streak}</div>`:""}</td></tr>`;
 }
 function renderMine(list){
   $("myActions").innerHTML = list.length
     ? list.map(row).join("")
-    : `<tr><td colspan="3" style="color:var(--latte);font-weight:700">No actions yet — log your first one in the Action tab <svg class=ui-icon aria-hidden=true><use href=#icon-camera></use></svg></td></tr>`;
+    : `<tr><td colspan="3" style="color:var(--latte);font-weight:700">No actions yet — log your first one in the Action tab <svg class=ui-icon aria-hidden=true><use href="assets/icons/lucide.svg#icon-camera"></use></svg></td></tr>`;
 }
 function renderPending(list){
   if(!list.length){ $("pendingTable").innerHTML=""; $("noPending").hidden=false; return; }
@@ -875,8 +849,8 @@ function renderPending(list){
         <div class="id">${short(p.id)} · by ${short(p.submitter)} · ${timeAgo(Math.floor(p.submittedAt/1000))}</div>
         <img class="proof-preview" style="display:block;max-width:180px;margin-top:8px" src="${p.photoUrl}" alt="Submitted proof"></td>
     <td class="pending-actions">
-      <button class="btn btn-p btn-sm" data-act="approve" data-id="${p.id}" style="margin-bottom:6px"><svg class=ui-icon aria-hidden=true><use href=#icon-check></use></svg> Approve</button><br>
-      <button class="btn btn-d btn-sm" data-act="reject" data-id="${p.id}"><svg class=ui-icon aria-hidden=true><use href=#icon-x></use></svg> Reject</button></td></tr>`).join("");
+      <button class="btn btn-p btn-sm" data-act="approve" data-id="${p.id}" style="margin-bottom:6px"><svg class=ui-icon aria-hidden=true><use href="assets/icons/lucide.svg#icon-check"></use></svg> Approve</button><br>
+      <button class="btn btn-d btn-sm" data-act="reject" data-id="${p.id}"><svg class=ui-icon aria-hidden=true><use href="assets/icons/lucide.svg#icon-x"></use></svg> Reject</button></td></tr>`).join("");
 }
 async function queuedFor(wallet){
   if(!ethers.isAddress(wallet))return [];
