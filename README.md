@@ -6,7 +6,7 @@
 
 **Eco-action rewards on BOT Chain**
 
-Record real environmental actions, verify their proof, and reward approved contributions with a fixed-supply SYL token.
+A verifiable reward protocol for real-world climate action. It enables anyone to turn verified eco-actions into on-chain value by funding rewards from a fixed 1,000,000 $SYL pool that is only released after each action is verified on-chain and burned on redemption, so supply can only fall.
 
 <br />
 
